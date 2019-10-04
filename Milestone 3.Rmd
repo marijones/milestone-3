@@ -1,0 +1,29 @@
+---
+title: 'Milestone #3'
+author: "Mari Jones"
+date: "10/3/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+library(dplyr)
+library(janitor)
+library(readxl)
+```
+
+```{r}
+dataset_1 <- read_excel("juvenile_data.xlsx", skip = 10) %>%
+  clean_names()
+```
+#This dataset comes from the Bureau of Justice Statistics who release reports related to the carceral state of the country. I was having trouble finding more current information related to juvenile justice and incarceration information just because most states aren't as responsive in reporting this information as they are about reporting information related to adult incarceration. I chose this dataset to provide numbers on reported allegations of youth-on-youth sexual assaults in juvenile detention centers and because it gives a state-by-state breakdown of allegations, substantiated claims, "unfounded" claims, etc. which will be useful for further analysis. I want to use this data to address a broader question of sexual violence and how sexual assault is handled in juvenile, "criminal" situations. Broadly, I am very interested in the nature and psychology behind sexual violence, but for this project I want to focus on narratives, laws, and how big data can answer legal questions surrounding sexual violence. 
+
+```{r}
+dataset_2 <- read_excel("demographic_data.xlsx", skip = 3) %>%
+  clean_names()
+```
+#This dataset comes from the Office of Juvenile Justice and Delinquency Prevention. I want to use this dataset to provide demographic statistics on what our incarcerated youth looks like on a year-to-year basis since the introduction of "super predator" and lack of child innocence rhetoric. I think demographic data is always important, but also I might want to use this data to have numbers on the racialized aspects of incarceration and victimization. Demographic information will help to answer broader questions about the implications of a justice system that ignores juvenile rights, holds racial bias, and bases culpability on socioeconomic circumstance. 
